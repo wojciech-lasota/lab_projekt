@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import './drag.scss';
 
-function Drag({ children }) {
+function Drag({ children, onClose, id }) {
     //   var defaultFontSize = window.getComputedStyle("root", null).getPropertyValue("font-size");
     // var defaultFontSize = window.getComputedStyle(root,null).getPropertyValue("font-size");
     const root = document.querySelector('#root');
@@ -35,6 +35,14 @@ function Drag({ children }) {
             nodeRef={nodeRef}
         >
             <div ref={nodeRef} className="drag-container">
+                <button
+                    type="button"
+                    onClick={() => {
+                        onClose(id);
+                    }}
+                >
+                    close
+                </button>
                 <div className="handle">Drag from here</div>
                 <div className="dragContent">{children}</div>
             </div>
@@ -43,5 +51,6 @@ function Drag({ children }) {
 }
 Drag.propTypes = {
     children: PropTypes.node.isRequired,
+    onClose: PropTypes.func.isRequired,
 };
 export default Drag;

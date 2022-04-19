@@ -17,6 +17,12 @@ function App() {
         setAppRegistry({ ...appRegistry, [currentId]: newApp });
         currentId++;
     };
+    const onClose = (id) => {
+        const newRegistry = Object.values(appRegistry)
+            .filter(({ appId }) => appId !== id)
+            .reduce((registry, app) => ({ ...registry, [app.id]: app }), {});
+        setAppRegistry(newRegistry);
+    };
     return (
         <>
             {}
@@ -26,7 +32,9 @@ function App() {
             </Drag> */
                 Object.values(appRegistry).map(({ appName, id }) => (
                     <div key={id}>
-                        <Drag>{appMap[appName]()}</Drag>
+                        <Drag id={id} onClose={onClose}>
+                            {appMap[appName]()}
+                        </Drag>
                     </div>
                 ))
             }

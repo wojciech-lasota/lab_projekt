@@ -2,7 +2,6 @@ import { render } from '@testing-library/react';
 import React from 'react';
 // import ReactDOM from 'react-dom';
 // import Drag from './Drag';
-import Sapper from './Sapper';
 
 import { features } from './toolbarFeatures';
 
@@ -20,7 +19,7 @@ function Toolbar({ openApp }) {
                                 // render(<Drag></Drag>);
                             } else if (e.className == 'minesweeper_btn') {
                                 console.log('saper');
-                                render(<Sapper />);
+                                // render(<Sapper />);
                             }
                         }}
                     >
