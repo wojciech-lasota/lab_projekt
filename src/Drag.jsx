@@ -3,6 +3,8 @@ import React from 'react';
 import Draggable from 'react-draggable';
 import PropTypes from 'prop-types';
 
+import './drag.scss';
+
 function Drag({ children }) {
     //   var defaultFontSize = window.getComputedStyle("root", null).getPropertyValue("font-size");
     // var defaultFontSize = window.getComputedStyle(root,null).getPropertyValue("font-size");
@@ -10,13 +12,13 @@ function Drag({ children }) {
     const defaultFontSize = window
         .getComputedStyle(root, null)
         .getPropertyValue('font-size');
-    console.log(defaultFontSize);
+    // console.log(defaultFontSize);
     const halfWidth = window.innerWidth / 2;
 
-    const windowCenter =
-        parseInt(halfWidth) - parseInt(defaultFontSize) * parseInt(15);
+    // const windowCenter =
+    //     parseInt(halfWidth) - parseInt(defaultFontSize) * parseInt(15);
 
-    console.log(windowCenter);
+    // console.log(windowCenter);
     const nodeRef = React.useRef(null);
 
     return (
@@ -32,7 +34,7 @@ function Drag({ children }) {
             onStop={() => {}}
             nodeRef={nodeRef}
         >
-            <div className="center" ref={nodeRef}>
+            <div ref={nodeRef} className="drag-container">
                 <div className="handle">Drag from here</div>
                 <div className="dragContent">{children}</div>
             </div>

@@ -21,6 +21,16 @@ module.exports = {
         'prettier',
         'plugin:prettier/recommended',
     ],
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
+        },
+    },
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
     plugins: [
         'import',
         'prettier',

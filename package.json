@@ -15,8 +15,8 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "eslint": "eslint src --ext js,jsx",
-        "eslint:fix": "eslint src --ext js,jsx --fix",
+        "eslint": "eslint . --ext js,jsx",
+        "eslint:fix": "eslint . --ext js,jsx --fix",
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
@@ -52,6 +52,7 @@
         "eslint-plugin-react": "^7.29.4",
         "eslint-plugin-react-hooks": "^4.4.0",
         "prettier": "^2.6.2",
-        "prettier-eslint": "^13.0.0"
+        "prettier-eslint": "^13.0.0",
+        "sass": "^1.50.1"
     }
 }

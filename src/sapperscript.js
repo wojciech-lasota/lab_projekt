@@ -1,13 +1,21 @@
-
 // minesweeper
-var components = {
+const components = {
     num_of_rows: 12,
     num_of_cols: 24,
     num_of_bombs: 55,
     bomb: '💣',
     alive: true,
-    colors: { 1: 'blue', 2: 'green', 3: 'red', 4: 'purple', 5: 'maroon', 6: 'turquoise', 7: 'black', 8: 'grey' }
-}
+    colors: {
+        1: 'blue',
+        2: 'green',
+        3: 'red',
+        4: 'purple',
+        5: 'maroon',
+        6: 'turquoise',
+        7: 'black',
+        8: 'grey',
+    },
+};
 
 function startGame() {
     components.bombs = placeBombs();
@@ -15,7 +23,8 @@ function startGame() {
 }
 
 function placeBombs() {
-    var i, rows = [];
+    let i;
+    const rows = [];
 
     for (i = 0; i < components.num_of_bombs; i++) {
         placeSingleBomb(rows);
@@ -24,8 +33,10 @@ function placeBombs() {
 }
 
 function placeSingleBomb(bombs) {
-
-    var nrow, ncol, row, col;
+    let nrow;
+    let ncol;
+    let row;
+    let col;
     nrow = Math.floor(Math.random() * components.num_of_rows);
     ncol = Math.floor(Math.random() * components.num_of_cols);
     row = bombs[nrow];
@@ -39,19 +50,21 @@ function placeSingleBomb(bombs) {
 
     if (!col) {
         row[ncol] = true;
-        return
-    }
-    else {
+    } else {
         placeSingleBomb(bombs);
     }
 }
 
 function cellID(i, j) {
-    return 'cell-' + i + '-' + j;
+    return `cell-${i}-${j}`;
 }
 
 function createTable() {
-    var table, row, td, i, j;
+    let table;
+    let row;
+    let td;
+    let i;
+    let j;
     table = document.createElement('table');
 
     for (i = 0; i < components.num_of_rows; i++) {
@@ -83,7 +96,6 @@ function addCellListeners(td, i, j) {
     });
 
     td.addEventListener('mouseup', function (event) {
-
         if (!components.alive) {
             return;
         }
@@ -95,7 +107,6 @@ function addCellListeners(td, i, j) {
         components.mousewhiches = 0;
 
         if (event.which === 3) {
-
             if (this.clicked) {
                 return;
             }
@@ -112,9 +123,8 @@ function addCellListeners(td, i, j) {
 
             return false;
         }
-        else {
-            handleCellClick(this, i, j);
-        }
+
+        handleCellClick(this, i, j);
     });
 
     td.oncontextmenu = function () {
@@ -137,28 +147,30 @@ function handleCellClick(cell, i, j) {
         cell.style.color = 'red';
         cell.textContent = components.bomb;
         gameOver();
-
-    }
-    else {
+    } else {
         cell.style.backgroundColor = 'lightGrey';
-        var num_of_bombs = adjacentBombs(i, j);
+        const num_of_bombs = adjacentBombs(i, j);
         if (num_of_bombs) {
             cell.style.color = components.colors[num_of_bombs];
             cell.textContent = num_of_bombs;
-        }
-        else {
+        } else {
             clickAdjacentBombs(i, j);
         }
     }
 }
 
 function adjacentBombs(row, col) {
-    var i, j, num_of_bombs;
+    let i;
+    let j;
+    let num_of_bombs;
     num_of_bombs = 0;
 
     for (i = -1; i < 2; i++) {
         for (j = -1; j < 2; j++) {
-            if (components.bombs[row + i] && components.bombs[row + i][col + j]) {
+            if (
+                components.bombs[row + i] &&
+                components.bombs[row + i][col + j]
+            ) {
                 num_of_bombs++;
             }
         }
@@ -167,12 +179,14 @@ function adjacentBombs(row, col) {
 }
 
 function adjacentFlags(row, col) {
-    var i, j, num_flags;
+    let i;
+    let j;
+    let num_flags;
     num_flags = 0;
 
     for (i = -1; i < 2; i++) {
         for (j = -1; j < 2; j++) {
-            var cell = document.getElementById(cellID(row + i, col + j));
+            const cell = document.getElementById(cellID(row + i, col + j));
             if (!!cell && cell.flagged) {
                 num_flags++;
             }
@@ -182,7 +196,9 @@ function adjacentFlags(row, col) {
 }
 
 function clickAdjacentBombs(row, col) {
-    var i, j, cell;
+    let i;
+    let j;
+    let cell;
 
     for (i = -1; i < 2; i++) {
         for (j = -1; j < 2; j++) {
@@ -205,8 +221,7 @@ function performMassClick(cell, row, col) {
 
 function gameOver() {
     components.alive = false;
-    document.getElementById('lost').style.display = "block";
-
+    document.getElementById('lost').style.display = 'block';
 }
 
 function reload() {
@@ -214,7 +229,7 @@ function reload() {
 }
 
 window.addEventListener('load', function () {
-    document.getElementById('lost').style.display = "none";
+    document.getElementById('lost').style.display = 'none';
     startGame();
 });
 // export default sapperscript;
