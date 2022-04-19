@@ -1,0 +1,6 @@
+.dragContent {
+    width: 50rem;
+    background-color: blue;
+    resize: both;
+    overflow: auto;
+}

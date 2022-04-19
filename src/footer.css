@@ -1,0 +1,23 @@
+.footer__toolbar {
+    width: 100%;
+    min-height: 5rem;
+    position: fixed;
+    bottom: 5%;
+    background-color: aquamarine;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.footer__icon {
+    width: 5rem;
+    margin-left: 1.5rem;
+}
+
+.footer__icon img {
+    width: 5rem;
+    height: 5rem;
+    transition: all 200ms ease-in-out;
+}
+
+.footer__icon img:hover {
+    transform: scale(1.1) rotate(0deg) translate(0px, -10px);
+}
