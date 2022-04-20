@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import Toolbar from './Toolbar';
 import { useState } from 'react';
+import Toolbar from './Toolbar';
 
 import Drag from './Drag';
 import Notepad from './Notepad';

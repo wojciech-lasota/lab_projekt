@@ -2,11 +2,11 @@ import React from 'react';
 import './accessTextarea';
 
 export default function Notepad() {
-    class textAreaContent {
-        constructor(note = 'note') {
-            this.note = note;
-        }
-    }
+    // class textAreaContent {
+    //     constructor(note = 'note') {
+    //         this.note = note;
+    //     }
+    // }
     function createLocalStorageKey() {
         localStorage.setItem('itemInputBox', JSON.stringify({ items: [] }));
     }
@@ -14,15 +14,15 @@ export default function Notepad() {
         const toGet = localStorage.getItem('itemInputBox');
         return toGet;
     }
-    function parseValueToHTML() {
-        const valuesJSON = get();
-        if (valuesJSON == null) {
-            createLocalStorageKey();
-        }
-        const values = JSON.parse(get());
-        document.getElementById('outputArea').innerHTML =
-            values.items[Math.floor(Math.random() * values.items.length)];
-    }
+    // function parseValueToHTML() {
+    //     const valuesJSON = get();
+    //     if (valuesJSON == null) {
+    //         createLocalStorageKey();
+    //     }
+    //     const values = JSON.parse(get());
+    //     document.getElementById('outputArea').innerHTML =
+    //         values.items[Math.floor(Math.random() * values.items.length)];
+    // }
 
     function saveTextAsFile() {
         const textarea = document.getElementById('textArea').value;

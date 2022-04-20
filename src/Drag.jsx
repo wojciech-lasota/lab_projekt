@@ -16,7 +16,8 @@ function Drag({ children, onClose, id }) {
     const halfWidth = window.innerWidth / 2;
 
     const windowCenter =
-        parseInt(halfWidth) - parseInt(defaultFontSize) * parseInt(20);
+        parseInt(halfWidth, 10) -
+        parseInt(defaultFontSize, 10) * parseInt(20, 10);
 
     // console.log(windowCenter);
     const nodeRef = React.useRef(null);
