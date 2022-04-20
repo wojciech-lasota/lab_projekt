@@ -7,9 +7,7 @@ import Notepad from './Notepad';
 import Minesweeper from './Minesweeper';
 
 let currentId = 1;
-// function Minesweeper() {
-//     return <>kurwa</>;
-// }
+
 const appMap = { notepad: Notepad, minesweeper: Minesweeper };
 
 function App() {
