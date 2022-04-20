@@ -38,16 +38,12 @@
     }
 }
 
-body {
-    background: rgba(252, 70, 107, 1);
-}
-
 @import "flex.css";
 @import "footer.css";
 
-/* minesweeper */
 body {
-    background-color: rgb(98, 98, 98);
+    background: #ffcb77;
+    overflow: hidden;
 }
 
 h2,
@@ -83,4 +79,8 @@ button {
     color: black;
     font-weight: bolder;
     border-radius: 20px 20px 20px 20px;
+}
+.button_save {
+    position: absolute;
+    bottom: 0;
 }

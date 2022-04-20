@@ -5,9 +5,13 @@ import { useState } from 'react';
 
 import Drag from './Drag';
 import Notepad from './Notepad';
+import Minesweeper from './Minesweeper';
 
 let currentId = 1;
-const appMap = { notepad: Notepad };
+// function Minesweeper() {
+//     return <>kurwa</>;
+// }
+const appMap = { notepad: Notepad, minesweeper: Minesweeper };
 
 function App() {
     const [appRegistry, setAppRegistry] = useState({});
@@ -19,7 +23,7 @@ function App() {
     };
     const onClose = (id) => {
         const newRegistry = Object.values(appRegistry)
-            .filter(({ appId }) => appId !== id)
+            .filter(({ id: appId }) => appId !== id)
             .reduce((registry, app) => ({ ...registry, [app.id]: app }), {});
         setAppRegistry(newRegistry);
     };

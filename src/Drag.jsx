@@ -15,8 +15,8 @@ function Drag({ children, onClose, id }) {
     // console.log(defaultFontSize);
     const halfWidth = window.innerWidth / 2;
 
-    // const windowCenter =
-    //     parseInt(halfWidth) - parseInt(defaultFontSize) * parseInt(15);
+    const windowCenter =
+        parseInt(halfWidth) - parseInt(defaultFontSize) * parseInt(20);
 
     // console.log(windowCenter);
     const nodeRef = React.useRef(null);
@@ -25,7 +25,7 @@ function Drag({ children, onClose, id }) {
         <Draggable
             axis="both"
             handle=".handle"
-            defaultPosition={{ x: 0, y: 0 }}
+            defaultPosition={{ x: windowCenter, y: 0 }}
             position={null}
             grid={[1, 1]}
             scale={1}
@@ -34,17 +34,29 @@ function Drag({ children, onClose, id }) {
             onStop={() => {}}
             nodeRef={nodeRef}
         >
-            <div ref={nodeRef} className="drag-container">
-                <button
+            <div ref={nodeRef} className="drag-container ">
+                {/* <button
                     type="button"
                     onClick={() => {
                         onClose(id);
                     }}
                 >
                     close
-                </button>
-                <div className="handle">Drag from here</div>
-                <div className="dragContent">{children}</div>
+                </button> */}
+                <div className="handle flex flex-jc-sb">
+                    Drag from here
+                    <button
+                        type="button"
+                        className="btn-close"
+                        onClick={() => {
+                            onClose(id);
+                        }}
+                    >
+                        <span className="icon-cross" />
+                        <span className="visually-hidden">Close</span>
+                    </button>
+                </div>
+                <div className="dragContent ">{children}</div>
             </div>
         </Draggable>
     );

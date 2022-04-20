@@ -2,7 +2,8 @@ import { render } from '@testing-library/react';
 import React from 'react';
 // import ReactDOM from 'react-dom';
 // import Drag from './Drag';
-
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { features } from './toolbarFeatures';
 
 function Toolbar({ openApp }) {
@@ -12,13 +13,13 @@ function Toolbar({ openApp }) {
                 return (
                     <div
                         key={e.id}
-                        className="footer__icon "
+                        className="footer__icon flex flex-ai-c"
                         onClick={() => {
                             if (e.className == 'notepad_btn') {
                                 openApp('notepad');
                                 // render(<Drag></Drag>);
                             } else if (e.className == 'minesweeper_btn') {
-                                console.log('saper');
+                                openApp('minesweeper');
                                 // render(<Sapper />);
                             }
                         }}

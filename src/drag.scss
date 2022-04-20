@@ -1,9 +1,126 @@
-.dragContent {
-    width: 50rem;
+.handle {
+    min-width: 40rem;
     background-color: blue;
-    resize: both;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 2px solid fuchsia;
+
+}
+.handle:hover{
+    cursor: move;
+}
+.dragContent {
+    min-width: 40rem;
+    background-color: blue;
+    // resize: both;
     overflow: auto;
 }
 .drag-container {
     position: absolute;
+}
+.close {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+}
+
+.close:hover {
+    opacity: 1;
+}
+
+.close:before,
+.close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
+@mixin cross($size: 20px, $color: currentColor, $thickness: 1px) {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    position: relative;
+    width: $size;
+    height: $size;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: ($size - $thickness) / 2;
+        left: 0;
+        right: 0;
+        height: $thickness;
+        background: $color;
+        border-radius: $thickness;
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+
+    span {
+        display: block;
+    }
+
+}
+
+
+// Example 1.
+.btn-close {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background: red;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 150ms;
+    opacity: 0.85;
+
+    .icon-cross {
+        @include cross(15px, #fff, 2px);
+    }
+
+    &:hover,
+    &:focus {
+        background: red;
+        opacity: 1;
+    }
+
+}
+// For screen readers.
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+textarea{
+min-width: fit-content;
 }
