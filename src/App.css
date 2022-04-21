@@ -80,7 +80,12 @@ button {
     font-weight: bolder;
     border-radius: 20px 20px 20px 20px;
 }
+.button_contener {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 .button_save {
-    position: absolute;
-    bottom: 0;
+    /* position: absolute; */
+    /* bottom: 0; */
 }
