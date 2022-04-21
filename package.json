@@ -10,10 +10,12 @@
         "ckeditor4-react": "^3.0.0",
         "lit": "^2.2.2",
         "minesweeper-for-web": "^2.1.13",
+        "moment": "^2.29.3",
         "prop-types": "^15.8.1",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "react-draggable": "^4.4.4",
+        "react-open-weather": "^1.2.0",
         "react-scripts": "5.0.1",
         "web-vitals": "^2.1.4"
     },

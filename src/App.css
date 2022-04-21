@@ -89,3 +89,16 @@ button {
     /* position: absolute; */
     /* bottom: 0; */
 }
+#clock {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    color: #61dafb;
+    transition: all 500ms ease-in-out;
+    transform: translate(0%, -50%);
+}
+#clock:hover {
+    text-shadow: 1px 1px yellow;
+    /* transform: scale(1.1) rotate(0deg) translate(0px, -50%); */
+    opacity: 1;
+}

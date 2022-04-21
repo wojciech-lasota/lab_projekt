@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import React from 'react';
+import moment from 'moment';
 // import ReactDOM from 'react-dom';
 // import Drag from './Drag';
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -27,7 +28,8 @@ function Toolbar({ openApp }) {
                         <img src={e.img} alt={e.alt} />
                     </div>
                 );
-            })}
+            })}{' '}
+            <div id="clock">{moment().format('MMMM Do YYYY, h:mm:ss a')}</div>
         </div>
     );
 }

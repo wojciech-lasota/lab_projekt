@@ -1,5 +1,5 @@
-import notepad from './images/notepad.svg';
-import pngwing from './images/pngwing.png';
+import notepad from '../images/notepad.svg';
+import pngwing from '../images/pngwing.png';
 
 export const features = [
     {

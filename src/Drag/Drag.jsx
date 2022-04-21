@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import './drag.scss';
 
-function Drag({ children, onClose, id }) {
+function Drag({ children, onClose, id, onClick, index }) {
     //   var defaultFontSize = window.getComputedStyle("root", null).getPropertyValue("font-size");
     // var defaultFontSize = window.getComputedStyle(root,null).getPropertyValue("font-size");
     const root = document.querySelector('#root');
@@ -24,6 +24,9 @@ function Drag({ children, onClose, id }) {
 
     return (
         <Draggable
+            onMouseDown={() => {
+                onClick(id);
+            }}
             axis="both"
             handle=".handle"
             defaultPosition={{ x: windowCenter, y: 0 }}
@@ -35,7 +38,11 @@ function Drag({ children, onClose, id }) {
             onStop={() => {}}
             nodeRef={nodeRef}
         >
-            <div ref={nodeRef} className="drag-container ">
+            <div
+                ref={nodeRef}
+                className="drag-container "
+                style={{ zIndex: index }}
+            >
                 {/* <button
                     type="button"
                     onClick={() => {
@@ -48,6 +55,9 @@ function Drag({ children, onClose, id }) {
                     Drag from here
                     <button
                         type="button"
+                        onMouseDown={() => {
+                            onClick(id);
+                        }}
                         className="btn-close"
                         onClick={() => {
                             onClose(id);

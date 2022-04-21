@@ -1,18 +1,29 @@
 import './App.css';
 import { useState } from 'react';
-import Toolbar from './Toolbar';
+import Toolbar from './Toolbar/Toolbar';
 
-import Drag from './Drag';
+import Drag from './Drag/Drag';
 import Notepad from './Notepad';
 import Minesweeper from './Minesweeper';
+import CurrentWeater from './Weather/Weather';
 
 let currentId = 1;
-
+let currentIndex = 0;
 const appMap = { notepad: Notepad, minesweeper: Minesweeper };
 
 function App() {
     const [appRegistry, setAppRegistry] = useState({});
-
+    const pushToTop = (id) => {
+        if (appRegistry[id].index === currentIndex - 1) {
+            return;
+        }
+        const newRegistry = {
+            ...appRegistry,
+            [id]: { ...appRegistry[id], index: currentIndex },
+        };
+        setAppRegistry(newRegistry);
+        currentIndex++;
+    };
     const openApp = (appName) => {
         const newApp = { appName, id: currentId };
         setAppRegistry({ ...appRegistry, [currentId]: newApp });
@@ -26,14 +37,20 @@ function App() {
     };
     return (
         <>
-            {}
+            <CurrentWeater />
             {
                 /* <Drag>
                 <Notepad />
             </Drag> */
+
                 Object.values(appRegistry).map(({ appName, id }) => (
                     <div key={id}>
-                        <Drag id={id} onClose={onClose}>
+                        <Drag
+                            id={id}
+                            onClose={onClose}
+                            onClick={pushToTop}
+                            index={appRegistry[id].index}
+                        >
                             {appMap[appName]()}
                         </Drag>
                     </div>
