@@ -27,6 +27,12 @@ export default function Notepad() {
     // currentId++;
     // console.log(newMessage);
     // }
+    const save = () => {
+        const textAreatValue = document.getElementById('textArea').value;
+        localStorage.setItem(1, textAreatValue);
+        const wiadomsoc = localStorage.getItem(1);
+        console.log(wiadomsoc);
+    };
     return (
         <div>
             <h2>notepad</h2>
@@ -38,7 +44,7 @@ export default function Notepad() {
                     id="save"
                     className="button_save"
                     type="button"
-                    // onClick=""
+                    onClick={save}
                 >
                     save
                 </button>

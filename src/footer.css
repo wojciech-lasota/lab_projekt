@@ -28,6 +28,19 @@
     transform: scale(1.5) rotate(0deg) translate(0px, 0px);
     opacity: 1;
 }
+.footer__toolbar {
+    transition: all 9000ms ease-in-out;
+    opacity: 0.7;
+    /* transition-property: all;
+    transition-duration: 5s;
+    transition-delay: 2s; */
+
+    background: linear-gradient(to right, #333399, #ff00cc);
+    transition: background-color 5s ease-out;
+}
+
 .footer__toolbar:hover {
+    background: linear-gradient(to right, #333399, #ff00cc);
+    transition: background-color 5s ease-out;
     opacity: 1;
 }

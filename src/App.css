@@ -102,3 +102,17 @@ button {
     /* transform: scale(1.1) rotate(0deg) translate(0px, -50%); */
     opacity: 1;
 }
+* {
+    z-index: 1;
+}
+@import "./Background/background.css";
+/* #pogoda {
+    position: absolute;
+    top: 0;
+} */
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+    textarea {
+        width: 300px;
+    }
+}
+@import "footer.css";

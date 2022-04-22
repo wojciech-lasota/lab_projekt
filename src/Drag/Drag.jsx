@@ -54,12 +54,15 @@ function Drag({ children, onClose, id, onClick, index }) {
                 <div className="handle flex flex-jc-sb">
                     Drag from here
                     <button
+                        className="btn-close"
                         type="button"
                         onMouseDown={() => {
                             onClick(id);
                         }}
-                        className="btn-close"
                         onClick={() => {
+                            onClose(id);
+                        }}
+                        onTouchStart={() => {
                             onClose(id);
                         }}
                     >

@@ -6,9 +6,10 @@ import Drag from './Drag/Drag';
 import Notepad from './Notepad';
 import Minesweeper from './Minesweeper';
 import CurrentWeater from './Weather/Weather';
+import Background from './Background/Background';
 
 let currentId = 1;
-let currentIndex = 0;
+let currentIndex = 1;
 const appMap = { notepad: Notepad, minesweeper: Minesweeper };
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
     };
     return (
         <>
+            <Background />
             <CurrentWeater />
             {
                 /* <Drag>
