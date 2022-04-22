@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/lab_projekt/static/css/main.cdeedcdd.css",
+    "main.js": "/lab_projekt/static/js/main.ab2744dc.js",
+    "static/media/notepad.svg": "/lab_projekt/static/media/notepad.da3acecf7809fb3925d8d9a2687d0482.svg",
+    "index.html": "/lab_projekt/index.html",
+    "main.cdeedcdd.css.map": "/lab_projekt/static/css/main.cdeedcdd.css.map",
+    "main.ab2744dc.js.map": "/lab_projekt/static/js/main.ab2744dc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdeedcdd.css",
+    "static/js/main.ab2744dc.js"
+  ]
+}
