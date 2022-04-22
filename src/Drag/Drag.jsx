@@ -52,7 +52,7 @@ function Drag({ children, onClose, id, onClick, index }) {
                     close
                 </button> */}
                 <div className="handle flex flex-jc-sb">
-                    Drag from here
+                    {/* Drag from here */}
                     <button
                         className="btn-close"
                         type="button"

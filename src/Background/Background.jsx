@@ -1,8 +1,11 @@
 import React from 'react';
+import DesktopIcon from '../DesktopIcon/DesktopIcon';
 
 import objTriangle from './assets/img/obj_triangle.png';
 
-function Background() {
+function Background({ onDesktopIconClick }) {
+    const currentFiles = JSON.parse(localStorage.getItem('fileRegistry'));
+
     // ('./assets/img/obj_triangle.png');
     return (
         <div className="abs">
@@ -14,6 +17,16 @@ function Background() {
                         718
                     </h1>
                 </div>
+                {currentFiles && (
+                    <div style={{ position: 'absolute', top: '50%' }}>
+                        {Object.keys(currentFiles).map((key) => (
+                            <DesktopIcon
+                                name={key}
+                                onDesktopIconClick={onDesktopIconClick}
+                            />
+                        ))}
+                    </div>
+                )}
                 <div className="rectangle-1" />
                 <div className="rectangle-2" />
                 <div className="rectangle-transparent-1" />
