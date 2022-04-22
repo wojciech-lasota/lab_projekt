@@ -15,6 +15,7 @@ const appMap = { notepad: Notepad, minesweeper: Minesweeper };
 
 function App() {
     const [appRegistry, setAppRegistry] = useState({});
+    const [update, setUpdate] = useState({});
     const pushToTop = (id) => {
         if (appRegistry[id].index === currentIndex - 1) {
             return;
@@ -67,7 +68,10 @@ function App() {
                             index={appRegistry[id].index}
                         >
                             {appName === 'notepad' ? (
-                                <Notepad openFileName={fileName} />
+                                <Notepad
+                                    openFileName={fileName}
+                                    setUpdate={setUpdate}
+                                />
                             ) : (
                                 <Minesweeper />
                             )}

@@ -9,7 +9,7 @@ function DesktopIcon({ name, onDesktopIconClick }) {
                     onDesktopIconClick(name);
                 }}
             >
-                {name}
+                {name}.txt
             </button>
         </div>
     );

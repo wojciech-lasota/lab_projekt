@@ -4,7 +4,7 @@ import './accessTextarea';
 // const currentId = 1;
 // const messageMap = { id: 0, message: '' };
 const currentId = 1;
-export default function Notepad({ openFileName }) {
+export default function Notepad({ openFileName, setUpdate }) {
     const currentFiles = JSON.parse(localStorage.getItem('fileRegistry'));
     let initialContent = '';
     let initialFileName = '';
@@ -47,6 +47,7 @@ export default function Notepad({ openFileName }) {
         const fileObjectToString = JSON.stringify(currentFiles);
 
         localStorage.setItem('fileRegistry', fileObjectToString);
+        setUpdate({});
 
         // const wiadomsoc = localStorage.getItem(currentId);
         // console.log(currentId);
