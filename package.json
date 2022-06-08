@@ -2,8 +2,9 @@
     "name": "lab",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://wojciech-lasota.github.io/lab_projekt/",
+    "homepage": "https://wojciech-lasota.github.io",
     "dependencies": {
+        "-": "^0.0.1",
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^13.1.1",
         "@testing-library/user-event": "^13.5.0",
@@ -17,6 +18,7 @@
         "react-draggable": "^4.4.4",
         "react-open-weather": "^1.2.0",
         "react-scripts": "5.0.1",
+        "save-dev": "^0.0.1-security",
         "web-vitals": "^2.1.4"
     },
     "scripts": {
@@ -62,5 +64,16 @@
         "prettier": "^2.6.2",
         "prettier-eslint": "^13.0.0",
         "sass": "^1.50.1"
+    },
+    "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+    "main": ".eslintrc.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wojciech-lasota/react-desktop-os.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/wojciech-lasota/react-desktop-os/issues"
     }
 }
