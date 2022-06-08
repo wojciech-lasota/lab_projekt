@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import DesktopIcon from '../DesktopIcon/DesktopIcon';
 

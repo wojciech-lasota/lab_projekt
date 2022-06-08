@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import './App.css';
 import { useState } from 'react';
 import Toolbar from './Toolbar/Toolbar';
@@ -7,6 +8,7 @@ import Notepad from './Notepad';
 import Minesweeper from './Minesweeper';
 import CurrentWeater from './Weather/Weather';
 import Background from './Background/Background';
+
 import DesktopIcon from './DesktopIcon/DesktopIcon';
 
 let currentId = 1;
